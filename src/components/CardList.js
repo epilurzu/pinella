@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 //import * as contentful from 'contentful'
-import PlayingCard from '../components/PlayingCard'
+import Card from './Card'
 import NavBar from "./NavBar";
 
 const SPACE_ID = ''
@@ -39,9 +39,9 @@ class CardList extends Component{
                         <Grid container spacing={24} style={{padding:24}}>
                             {this.state.list.map(singleItem => (
                                 <Grid item xs={12} sm={6} lg={4} xl={3}>
-                                    <PlayingCard singleItem={singleItem}>
+                                    <Card singleItem={singleItem}>
 
-                                    </PlayingCard>
+                                    </Card>
                                 </Grid>
                             ))}
                         </Grid>

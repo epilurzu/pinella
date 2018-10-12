@@ -1,29 +1,27 @@
 import React from 'react'
-import Card from '@material-ui/core/Card'
-
+//import {Card as CardMaterial} from '@material-ui/core/Card'
+import CardMaterial from '@material-ui/core/Card'   //Todo:WUT?
+//import Card from '@material-ui/core/Card'         //Todo:WUT?
 import Typography from '@material-ui/core/Typography'
-
-
-import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
 
-const PlayingCard = (variabile) =>{
+
+const Card = (variabile) =>{
     console.log(JSON.stringify(variabile))
 
     return(
         <div>
             {variabile ? (
-                <Card>
+                <CardMaterial>
                     <CardContent>
                         <Typography variant="h6">
                             {variabile.singleItem}
                         </Typography>
                     </CardContent>
-                </Card>
+                </CardMaterial>
             ): null}
         </div>
     )
 }
 
-export default PlayingCard;
+export default Card;
