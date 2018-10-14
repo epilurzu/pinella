@@ -20,13 +20,15 @@ const styles = theme => ({      //Todo: study theme
 
 const Card = (props) =>{
     const { classes } = props;
+    const { rank } = props;
+
     return (
         <div>
             {classes ? (
                 <CardMaterial className={classes.card}>
                     <CardContent>
                         <Typography variant="h6">
-                            {props.rank}
+                            {rank}
                         </Typography>
                     </CardContent>
                 </CardMaterial>
