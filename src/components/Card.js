@@ -27,15 +27,16 @@ const Card = (props) =>{
             {classes ? (
                 <CardMaterial className={classes.card}>
                     <CardContent>
-                        <Typography variant="h6">
-                            {rank}
+                        <Typography variant="h6"
+                                    align={"center"}>
+                            {rank}♠
                         </Typography>
                     </CardContent>
                 </CardMaterial>
             ) : null}
         </div>
     );
-}
+};
 
 Card.propTypes = {
     classes: PropTypes.object.isRequired,   //Todo: study PropTypes

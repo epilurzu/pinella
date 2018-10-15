@@ -1,38 +1,43 @@
-import React, {Component} from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Card from './Card'
 
-class CardList extends Component{
-    cardList= ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
-
-    constructor(props){
-        super(props)
+const styles = {
+    top: {
+        flexDirection:'row',
+        padding: 16
+    },
+    centre: {
+    },
+    bottom: {
     }
+};
 
-    render(){
-        return(
-            <div>
-                {this.cardList ? (
-                    <div>
-                        <Grid container
-                              spacing={24}
-                              justify="center"
-                              style={{padding:24}}>
-                            {this.cardList.map(rank => (
-                                <Grid item
-                                      direction="column"
-                                      justify="center"
-                                      alignItems="center"
-                                >
-                                    <Card rank={rank}/>
-                                </Grid>
-                            ))}
+const CardList = (props) => {
+    const cardList= ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
+    return(
+        <div>
+            {cardList ? (
+                <Grid container
+                      className={props.classes.top}
+                      spacing={16}
+                      justify={'center'}
+                >
+                    {cardList.map(rank => (
+                        <Grid key={rank} item>
+                            <Card rank={rank}/>
                         </Grid>
-                    </div>
-                ) : "List of cards is empty"}
-            </div>
-        )
-    }
-}
+                    ))}
+                </Grid>
+            ) : "List of cards is empty"}
+        </div>
+    )
+};
 
-export default CardList;
+CardList.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(CardList);
