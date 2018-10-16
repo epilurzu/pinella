@@ -10,11 +10,8 @@ const styles = theme => ({      //Todo: study theme
         flexGrow: 1,
     },
     card: {
-        height: 140,
-        width: 100,
-    },
-    control: {                  //Todo: Check
-        padding: theme.spacing.unit * 2,
+        height: "7em",
+        width: "5em",
     }
 });
 
@@ -28,7 +25,7 @@ const Card = (props) =>{
                 <CardMaterial className={classes.card}>
                     <CardContent>
                         <Typography variant="h6"
-                                    align={"center"}>
+                                    align="center">
                             {rank}♠
                         </Typography>
                     </CardContent>

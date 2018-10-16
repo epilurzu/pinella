@@ -10,8 +10,7 @@ import BookIcon from '@material-ui/icons/Book';
 
 const styles = {
     right: {
-        marginLeft: 'auto',
-        marginRight: -12,
+        marginLeft: 'auto'
     }
 };
 
