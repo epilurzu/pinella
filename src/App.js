@@ -6,7 +6,7 @@ import CardList from './components/CardList'
 import './App.css';
 import Grid from "@material-ui/core/Grid/Grid";
 
-import Utils from './utils/Utils';
+import Deck from './utils/Utils';
 
 const style = {
     main:{
@@ -17,7 +17,7 @@ const style = {
 
 class App extends Component {
     render() {
-        var deck = Utils.Deck();
+        var deck = Deck();
         deck.forEach(function (card){
             console.log(card);
         });
