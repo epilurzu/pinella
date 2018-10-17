@@ -6,6 +6,8 @@ import CardList from './components/CardList'
 import './App.css';
 import Grid from "@material-ui/core/Grid/Grid";
 
+import Utils from './utils/Utils';
+
 const style = {
     main:{
         height: "90vh",
@@ -15,6 +17,10 @@ const style = {
 
 class App extends Component {
     render() {
+        var deck = Utils.Deck();
+        deck.forEach(function (card){
+            console.log(card);
+        });
         return (
             <div>
                 <NavBar/>
