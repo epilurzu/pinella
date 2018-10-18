@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import Card from './Card'
 
 const CardList = (props) => {
-    const cardList= ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"];
+    const cardList= ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"];
     return(
         <div>
             {cardList ? (

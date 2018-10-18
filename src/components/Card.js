@@ -10,30 +10,42 @@ const styles = theme => ({      //Todo: study theme
         flexGrow: 1,
     },
     card: {
-        height: "7em",
-        width: "5em",
+        height: "15vh",  //140px
+        width: "10.71vh",   //100px
     }
 });
 
-const Card = (props) =>{
-    const { classes } = props;
-    const { rank } = props;
+export class Card extends React.Component{
 
-    return (
-        <div>
-            {classes ? (
-                <CardMaterial className={classes.card}>
-                    <CardContent>
-                        <Typography variant="h6"
-                                    align="center">
-                            {rank}♠
-                        </Typography>
-                    </CardContent>
-                </CardMaterial>
-            ) : null}
-        </div>
-    );
-};
+    constructor(props){
+        super(props);
+
+        let { rank, suit, number, points }= props;
+        this.rank= rank;
+        this.suit= suit;
+        this.number= number;
+        this.points= points;
+    }
+
+    render(){
+        let list= ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "jack", "queen", "king"];
+
+        return (
+            <div>
+                {list ? (
+                    <CardMaterial className={this.props.classes.card}>
+                        <CardContent>
+                            <Typography variant="h6"
+                                        align="center">
+                                {this.props.rank}♠
+                            </Typography>
+                        </CardContent>
+                    </CardMaterial>
+                ) : null}
+            </div>
+        );
+    }
+}
 
 Card.propTypes = {
     classes: PropTypes.object.isRequired,   //Todo: study PropTypes

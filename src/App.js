@@ -2,25 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import NavBar from './components/NavBar'
+import Deck from './components/Deck'
 import CardList from './components/CardList'
 import './App.css';
 import Grid from "@material-ui/core/Grid/Grid";
 
-import Deck from './utils/Utils';
-
 const style = {
     main:{
-        height: "90vh",
+        height: "85vh",
         padding: 24
     }
 };
 
 class App extends Component {
     render() {
-        var deck = Deck();
-        deck.forEach(function (card){
-            console.log(card);
-        });
         return (
             <div>
                 <NavBar/>
@@ -31,7 +26,14 @@ class App extends Component {
                       alignItems="center"
                 >
                     <CardList/>
-                    <CardList/>
+                    <Grid container
+                          direction="row"
+                          justify="flex-start"
+                          alignItems="center"
+                    >
+                        <Deck/>
+                        <CardList/>
+                    </Grid>
                     <CardList/>
                 </Grid>
             </div>
