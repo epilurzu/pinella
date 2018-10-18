@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import CardMaterial from '@material-ui/core/Card'
-import Typography from '@material-ui/core/Typography'
-import CardContent from '@material-ui/core/CardContent'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardMedia from '@material-ui/core/CardMedia'
 
 import { Rank, Suit, Points, shuffle } from "./utils/Utils";
 import { Card } from "./Card";
@@ -13,8 +13,8 @@ const styles = theme => ({      //Todo: study theme
         flexGrow: 1,
     },
     card: {
-        height: "15vh",  //140px
-        width: "5vw",   //100px
+        height: "15vh",     //140px
+        width: "10.71vh",   //100px
     }
 });
 
@@ -53,13 +53,13 @@ export class Deck extends React.Component{
         return (
             <div>
                 {this.deck ? (
-                    <CardMaterial className={this.props.card}>
-                        <CardContent>
-                            <Typography variant="h6"
-                                        align="center">
-                                deck
-                            </Typography>
-                        </CardContent>
+                    <CardMaterial className={this.props.classes.card}>
+                        <CardActionArea>
+                            <CardMedia className={this.props.classes.card}
+                                       image="/svgCards/joker_red.svg"
+                                       title="joker_red.svg">
+                            </CardMedia>
+                        </CardActionArea>
                     </CardMaterial>
                 ) : null}
             </div>
