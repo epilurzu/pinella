@@ -5,7 +5,7 @@ import CardMaterial from '@material-ui/core/Card'
 import Typography from '@material-ui/core/Typography'
 import CardContent from '@material-ui/core/CardContent'
 
-import { Rank, Suit, Points } from "./utils/Utils";
+import { Rank, Suit, Points, shuffle } from "./utils/Utils";
 import { Card } from "./Card";
 
 const styles = theme => ({      //Todo: study theme
@@ -24,6 +24,10 @@ export class Deck extends React.Component{
         super(props);
         this.deck= [];
         this.populateDeck();
+        this.deck= shuffle(this.deck)
+        this.deck.forEach(function (card) {
+            console.log(card.rank, card.suit, card.number, card.points);
+        });
     }
 
     populateDeck(){
@@ -42,10 +46,6 @@ export class Deck extends React.Component{
 
         this.deck = this.deck.filter(function (card) {
             return !(card.number === 2 && (card.suit === Suit[1] || card.suit === Suit[2]));
-        });
-
-        this.deck.forEach(function (card) {
-           console.log(card.rank, card.suit, card.number, card.points);
         });
     }
 
