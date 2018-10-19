@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import Grid from "@material-ui/core/Grid/Grid";
+
 import NavBar from './components/NavBar'
 import Deck from './components/Deck'
-import CardList from './components/CardList'
+import CPUCards from './components/CPUCards'
+import PlayerCards from './components/PlayerCards'
 import './App.css';
-import Grid from "@material-ui/core/Grid/Grid";
+
 
 const style = {
     main:{
@@ -25,16 +28,16 @@ class App extends Component {
                       justify="space-between"
                       alignItems="center"
                 >
-                    <CardList/>
+                    <CPUCards/>
                     <Grid container
                           direction="row"
                           justify="flex-start"
                           alignItems="center"
                     >
                         <Deck/>
-                        <CardList/>
+                        <PlayerCards/>
                     </Grid>
-                    <CardList/>
+                    <PlayerCards/>
                 </Grid>
             </div>
         );

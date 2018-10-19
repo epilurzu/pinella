@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import Card from './Card'
 
-const CardList = (props) => {
+const PlayerCards = (props) => {
     const cardList= ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"];
     return(
         <div>
@@ -24,4 +24,4 @@ const CardList = (props) => {
     )
 };
 
-export default CardList;
+export default PlayerCards;
