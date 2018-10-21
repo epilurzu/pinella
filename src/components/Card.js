@@ -5,7 +5,6 @@ import CardMaterial from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardMedia from '@material-ui/core/CardMedia'
 
-
 const styles = theme => ({      //Todo: study theme
     root: {                     //Todo: Check
         flexGrow: 1,
@@ -17,32 +16,20 @@ const styles = theme => ({      //Todo: study theme
 });
 
 export class Card extends React.Component{
-
-    constructor(props){
-        super(props);
-
-        let { rank, suit, number, points }= props;
-        this.rank= rank;
-        this.suit= suit;
-        this.number= number;
-        this.points= points;
-    }
-
     render(){
-        let list= ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "jack", "queen", "king"];
-
+        const {card} = this.props;
+        const title = card.rank + "_" + card.suit;
+        const image = "/svgCards/" + title + ".svg";
         return (
             <div>
-                {list ? (
-                    <CardMaterial className={this.props.classes.card}>
-                        <CardActionArea>
-                            <CardMedia className={this.props.classes.card}
-                                       image="/svgCards/ace_spades.svg"
-                                       title="ace_spades.svg">
-                            </CardMedia>
-                        </CardActionArea>
-                    </CardMaterial>
-                ) : null}
+                <CardMaterial className={this.props.classes.card}>
+                    <CardActionArea>
+                        <CardMedia className={this.props.classes.card}
+                                   image={image}
+                                   title={title}>
+                        </CardMedia>
+                    </CardActionArea>
+                </CardMaterial>
             </div>
         );
     }

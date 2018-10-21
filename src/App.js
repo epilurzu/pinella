@@ -9,6 +9,9 @@ import CPUCards from './components/CPUCards'
 import PlayerCards from './components/PlayerCards'
 import './App.css';
 
+import {Field} from './components/utils/Field'
+import PoolCards from "./components/PoolCards";
+
 
 const style = {
     main:{
@@ -19,6 +22,7 @@ const style = {
 
 class App extends Component {
     render() {
+        Field.init();
         return (
             <div>
                 <NavBar/>
@@ -31,11 +35,11 @@ class App extends Component {
                     <CPUCards/>
                     <Grid container
                           direction="row"
-                          justify="flex-start"
+                          justify="space-around"
                           alignItems="center"
                     >
                         <Deck/>
-                        <PlayerCards/>
+                        <PoolCards/>
                     </Grid>
                     <PlayerCards/>
                 </Grid>
