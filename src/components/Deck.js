@@ -25,8 +25,8 @@ export class Deck extends React.Component{
                     <CardMaterial className={this.props.classes.card}>
                         <CardActionArea>
                             <CardMedia className={this.props.classes.card}
-                                       image="/svgCards/joker_red.svg"
-                                       title="joker_red.svg">
+                                       image="/svgCards/deck.svg"
+                                       title="deck.svg">
                             </CardMedia>
                         </CardActionArea>
                     </CardMaterial>
