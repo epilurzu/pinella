@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 import CardMaterial from '@material-ui/core/Card'
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardMedia from '@material-ui/core/CardMedia'
+import {Field} from "./utils/Field";
 
 const styles = theme => ({      //Todo: study theme
     root: {                     //Todo: Check
@@ -15,18 +16,28 @@ const styles = theme => ({      //Todo: study theme
     }
 });
 
-export class Card extends React.Component{
+class Card extends React.Component{
+
+    constructor(props) {
+        super(props);
+    }
+
+    handleClick = () => {
+        Field.playerCards.pop();
+        this.props.handleClick();
+    }
+
     render(){
-        const {card} = this.props;
-        const title = card.rank + "_" + card.suit;
-        const image = "/svgCards/" + title + ".svg";
+        const title= this.props.card.rank + "_" + this.props.card.suit;
+        const image= "/svgCards/" + this.props.card.rank + "_" + this.props.card.suit + ".svg";
+
         return (
             <div>
                 <CardMaterial className={this.props.classes.card}>
-                    <CardActionArea>
+                    <CardActionArea onClick={this.handleClick}>
                         <CardMedia className={this.props.classes.card}
-                                   image={image}
-                                   title={title}>
+                                   title={title}
+                                   image={image}>
                         </CardMedia>
                     </CardActionArea>
                 </CardMaterial>
